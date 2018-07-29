@@ -1,9 +1,0 @@
-% root = 'F:\MHDO_Tracking\data\Janelia_Q1_2014\RingLED\MPEG4\Extracted_Clips';
-[filename_data, pathname_data, ext_data] = uigetfile('*.txt','Select the file to convert into kinData.');
-data = dlmread(filename_data);
-kinData.fps = 145.00;
-kinData.microntopixel = 3;
-kinData.stageposition(:,1) = data(:,2);
-kinData.stageposition(:,2) = data(:,3);
-kinData.fourier = data(:,10:end);
-kinData.contour = fourierReconstruct2(kinData.fourier,1000,35);
